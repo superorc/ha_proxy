@@ -19,3 +19,7 @@
     name: haproxy
     state: "{{ haproxy_service_state }}"
     enabled: "{{ haproxy_unit_enabled }}"
+
+#- name: Not idempotent task
+#  command: "uname -a"
+# got nice Idempotence test: fail error here =)

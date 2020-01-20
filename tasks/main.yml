@@ -1,0 +1,21 @@
+---
+# tasks file for ha_proxy
+- name: Install haproxy package
+  yum:
+    name: "haproxy-{{ haproxy_version }}"
+    state: "{{ haproxy_state }}"
+
+
+- name: Deliver default haproxy.cfg
+  template:
+    src: templates/haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+  register: defalt_config
+  notify: restart_haproxy
+
+
+- name: Enable and start haproxy service
+  service:
+    name: haproxy
+    state: "{{ haproxy_service_state }}"
+    enabled: "{{ haproxy_unit_enabled }}"

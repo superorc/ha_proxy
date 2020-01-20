@@ -1,0 +1,31 @@
+
+Vagrant.configure("2") do |config|
+  # vagrant box
+  image = "centos/7"
+
+  # vm cpu and mem
+  cpu = "2"
+  mem = "1024"
+
+  # hash with NAME IP for VM's
+  hosts = { :node1 => "192.168.33.132", :node2 => "192.168.33.102", :node3 => "192.168.33.103",
+            #:kafka1 => "192.168.33.201", :kafka2 => "192.168.33.202", :kafka3 => "192.168.33.203"
+          }
+  domain_name = ".vagrant.cluster"
+
+  # define virtualbox vms with NAME IP and hw params
+  hosts.each do |name, ip|
+    config.vm.define name do |instance|
+      instance.vm.box = image
+      instance.vm.network "private_network", ip: ip
+
+      instance.vm.hostname = name.to_s + domain_name
+
+      instance.vm.provider "virtualbox" do |vb|
+        vb.cpus = cpu
+        vb.memory = mem
+      end
+    end
+  end
+
+end

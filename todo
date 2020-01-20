@@ -1,0 +1,2 @@
+- use provisioning via asnible in local test vagrant
+  instead of inventory (and cfg ? )

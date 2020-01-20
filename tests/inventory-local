@@ -1,0 +1,7 @@
+[all:vars]
+ansible_user=vagrant
+
+[cluster]
+node1 ansible_host=192.168.33.132  ansible_ssh_private_key_file=.vagrant/machines/node1/virtualbox/private_key myid=1
+node2 ansible_host=192.168.33.102  ansible_ssh_private_key_file=.vagrant/machines/node2/virtualbox/private_key myid=2
+#node3 ansible_host=192.168.33.103  ansible_ssh_private_key_file=.vagrant/machines/node3/virtualbox/private_key myid=3

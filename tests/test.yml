@@ -1,0 +1,6 @@
+---
+- hosts: cluster
+  remote_user: root
+  roles:
+    - ha_proxy
+  become: yes

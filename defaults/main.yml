@@ -1,0 +1,9 @@
+---
+# defaults file for ha_proxy
+# Package
+haproxy_version: 1.5.18
+haproxy_state: present
+
+# Service
+haproxy_service_state: started
+haproxy_unit_enabled: yes

@@ -5,7 +5,8 @@ on: [push]
 jobs:
   build:
 
-    runs-on: centos:7
+    #runs-on: centos:7
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v1
@@ -13,6 +14,5 @@ jobs:
       run: echo Hello, world!
     - name: Run a multi-line script
       run: |
-        yum install ansible
-        ls -la
+        apt update && install docker
         cd tests && ansible-playbook -i localhost test.yml -vv

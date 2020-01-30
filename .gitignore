@@ -1,2 +1,5 @@
 tests/.vagrant
 *.retry
+*__pycache__
+ha_proxy_env
+todo

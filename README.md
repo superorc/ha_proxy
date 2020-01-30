@@ -16,7 +16,10 @@ None
 Dependencies
 ------------
 
-- Testing: vagrant, virtualbox, ansible # control machine (dev stanok)
+- Testing/Development: vagrant, virtualbox, ansible # control machine (dev stanok)
+
+      pip install -r requirements.txt --user
+
 - Prod: None
 
 Local tests
@@ -26,6 +29,13 @@ Duration is around 2 minutes with 2 VMs.
       $ time ./run_local_test.sh
 
 To add more VM's update tests/Vagrantfile and run_local_test.sh
+
+#### Molecule
+      $ molecule create
+      $ molecule converge
+      $ molecule idempotence
+      $ molecule verify
+      # need automate it
 
 Example Playbook
 ----------------

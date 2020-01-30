@@ -1,0 +1,7 @@
+
+molecule==2.22
+molecule[docker]
+molecule[vagrant]
+python-vagrant
+docker-py
+selinux
